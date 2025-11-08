@@ -12,10 +12,10 @@ const Banner = () => {
                 <p className=' text-gray-300 hidden md:flex text-sm md:text-xl max-w-2xl mb-8'>Discover Your Next Favorite Book in Our Vast Collection</p>
                 <div className='flex flex-col sm:flex-row gap-4'>
                     <button className='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-3 md:py-3 md:px-6 rounded-lg shadow-lg transition duration-300'>
-                        Explore Books
+                        All Books
                     </button>
                     <button className='bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-semibold py-1 px-3 md:py-3 md:px- rounded-lg transition duration-300'>
-                        Join Now
+                        Create Books
                     </button>
                 </div>
             </div>
