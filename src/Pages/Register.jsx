@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 
 const Register = () => {
+    const {googleSignIn} = use(AuthContext)
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -11,6 +13,15 @@ const Register = () => {
         const password = form.password.value;
         const newUser = { name, photo, email, password }
         console.log(newUser)
+
+        //
+        googleSignIn()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.log(error)
+        })
     }
     return (
         <div className='flex justify-center items-center md:h-screen md:mt-0 lg:mt-0 mt-16'>

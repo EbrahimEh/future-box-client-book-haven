@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import bookLogo from '../../assets/book logo.jpg'
+import { AuthContext } from '../../Context/AuthContext';
 
 const Navbar = () => {
+    const { user,signOutUser } = use(AuthContext)
+
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/allbook'>Home</NavLink></li>
+        <li><NavLink to='/allbook'>All Book</NavLink></li>
         <li><NavLink to='/addbook'>Add Book</NavLink></li>
         <li><NavLink to='/mybooks'>My Books</NavLink></li>
 
     </>
+
+    const handleSignOut = () =>{
+        signOutUser()
+        .then(result =>{
+            alert('Sign Out Successfully', result)
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
     return (
         <div className='w-full fixed z-50 top-0 left-0 mx-auto bg-base-100 shadow-sm'>
-            <div className="navbar md:max-w-11/12 mx-auto ">
+            <div className="navbar py-3 md:max-w-11/12 mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,9 +48,24 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className=" btn border-gray-300 text-blue-500 hover:bg-blue-200 hover:text-black font-medium py-1 px-4 rounded transition duration-200">
-                        Sign Up
-                    </a>
+                    <div>
+                        {
+                            user ? <div>
+                                <a onClick={handleSignOut} className=" btn border-gray-300 text-blue-500 hover:bg-blue-200 hover:text-black font-medium py-1 px-4 rounded transition duration-200">
+                                    Logout
+                                </a>
+                                <img src={user?.photoURL} alt="" />
+                            </div>
+
+                                :
+                                <div className='flex md:space-x-3 items-center'>
+                                    <img className='md:w-10 w-8 border rounded-full' src="https://img.icons8.com/?size=100&id=114064&format=png&color=000000" alt="" />
+                                    <a className=" btn border-gray-300 text-blue-500 hover:bg-blue-200 hover:text-black font-medium py-1 px-4 rounded transition duration-200">
+                                        Login
+                                    </a>
+                                </div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

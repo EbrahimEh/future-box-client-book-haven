@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
 import bookBanner from '../../assets/bookBanner.jpg'
+import { AuthContext } from '../../Context/AuthContext';
 
 const Banner = () => {
+    const {user} = use(AuthContext)
     return (
         <div className='md:max-w-[1600px] relative'>
             <div>
@@ -10,6 +12,7 @@ const Banner = () => {
             <div className='absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center px-4'>
                 <h1 className='text-gray-300 text-3xl md:text-6xl md:mt-0 mt-10 font-bold mb-4'>Books Haven</h1>
                 <p className=' text-gray-300 hidden md:flex text-sm md:text-xl max-w-2xl mb-8'>Discover Your Next Favorite Book in Our Vast Collection</p>
+                <p className='text-white'>{user?.email}</p>
                 <div className='flex flex-col sm:flex-row gap-4'>
                     <button className='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-3 md:py-3 md:px-6 rounded-lg shadow-lg transition duration-300'>
                         All Books
