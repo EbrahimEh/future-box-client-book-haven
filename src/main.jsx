@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import RootLayout from './Layout/RootLayout.jsx';
@@ -9,6 +9,15 @@ import Home from './components/Home/Home.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/register.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+
+AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 100
+});
 
 
 
