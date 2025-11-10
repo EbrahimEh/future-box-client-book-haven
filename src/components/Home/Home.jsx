@@ -1,6 +1,9 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import LatestBooks from '../../Pages/LatestBooks';
+import TopGenres from '../TopGenres/TopGenres';
+import BookOfTheWeek from '../BookOfTheWeek/BookOfTheWeek';
+import AboutBookHaven from '../AboutBookHaven/AboutBookHaven';
 
 const latestBookPromise = fetch('http://localhost:3000/books').then(res => res.json())
 
@@ -9,6 +12,9 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <LatestBooks latestBookPromise={latestBookPromise}></LatestBooks>
+            <TopGenres></TopGenres>
+            <BookOfTheWeek></BookOfTheWeek>
+            <AboutBookHaven></AboutBookHaven>
         </div>
     );
 };
