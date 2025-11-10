@@ -52,9 +52,16 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div>
                         {
-                            user ? <div className='flex md:space-x-3 items-center'>
+                            user ? <div  className='flex md:space-x-3 items-center '>
                                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
-                                    <img className='md:w-10 w-8 border rounded-full cursor-pointer' src={user?.photoURL} alt="User Profile" />
+                                    <img
+                                        className='md:w-10 w-8 border rounded-full cursor-pointer'
+                                        src={user?.photoURL || "https://img.icons8.com/?size=100&id=21441&format=png&color=000000"}
+                                        alt="User Profile"
+                                        onError={(e) => {
+                                            e.target.src = "https://img.icons8.com/?size=100&id=21441&format=png&color=000000";
+                                        }}
+                                    />
                                 </div>
 
                                 <a onClick={handleSignOut} className=" btn border-gray-300 text-blue-500 hover:bg-blue-200 hover:text-black font-medium py-1 px-4 rounded transition duration-200">
