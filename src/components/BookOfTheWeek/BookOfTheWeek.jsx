@@ -1,3 +1,5 @@
+import React from 'react';
+import { IoStar } from 'react-icons/io5';
 const BookOfTheWeek = () => {
     const featuredBook = {
         _id: "691091360e2b5a6ecd9e9177",
@@ -31,8 +33,8 @@ const BookOfTheWeek = () => {
                         <p className="text-gray-600 mb-4">By {featuredBook.author}</p>
                         <p className="text-gray-700 text-justify mb-6">{featuredBook.summary}</p>
                         <div className="flex items-center gap-4 mb-6">
-                            <span className="bg-yellow-400 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                ⭐ {featuredBook.rating}/5
+                            <span className="bg-yellow-400 text-white flex items-center  px-3 py-1 rounded-full text-sm font-semibold">
+                                <IoStar /> {featuredBook.rating}/5
                             </span>
                             <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
                                 {featuredBook.genre}

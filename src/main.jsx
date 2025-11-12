@@ -11,6 +11,8 @@ import Register from './Pages/register.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import AllBooks from './Pages/AllBooks.jsx';
+import BookDetails from './Pages/BookDetails.jsx';
 
 
 AOS.init({
@@ -37,6 +39,14 @@ const router = createBrowserRouter ([
       {
         path: '/register',
         Component: Register
+      },
+      {
+        path: '/allBooks',
+        Component: AllBooks
+      },
+      {
+        path: '/book-details/:id',
+        Component: BookDetails
       }
     ]
   }

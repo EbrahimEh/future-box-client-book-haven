@@ -13,8 +13,6 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        const newUser = { name, photo, email, password }
-        console.log(newUser)
 
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!passwordRegex.test(password)) {
@@ -29,6 +27,25 @@ const Register = () => {
                 console.log(user)
                 e.target.reset()
                 toast.success('Register Successfully')
+
+                const newUser = {
+                    name: name,
+                    email: email,
+                    photo: photo,
+                }
+
+                //create user in database
+                fetch('http://localhost:3000/users', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('data after save the user', data)
+                })
 
                 //update usr
                 updateUser({displayName: name, photoURL: photo})
@@ -49,6 +66,25 @@ const Register = () => {
         googleSignIn()
             .then(result => {
                 console.log(result.user);
+
+                const newUser = {
+                    name: result.user.displayName,
+                    email: result.user.email,
+                    photo: result.user.photoURL,
+                }
+
+                //create user in database
+                fetch('http://localhost:3000/users', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('data after save the user', data)
+                })
                 
             })
             .catch(error => {

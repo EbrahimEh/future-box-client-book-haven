@@ -1,4 +1,4 @@
-
+import React from 'react';
 const AboutBookHaven = () => {
     return (
         <section className="py-16 bg-white">
