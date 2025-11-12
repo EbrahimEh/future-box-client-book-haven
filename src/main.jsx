@@ -13,6 +13,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import AllBooks from './Pages/AllBooks.jsx';
 import BookDetails from './Pages/BookDetails.jsx';
+import AddBook from './Pages/AddBook.jsx';
 
 
 AOS.init({
@@ -47,6 +48,10 @@ const router = createBrowserRouter ([
       {
         path: '/book-details/:id',
         Component: BookDetails
+      },
+      {
+        path: '/add-book',
+        Component: AddBook
       }
     ]
   }
