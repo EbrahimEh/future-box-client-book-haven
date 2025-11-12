@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 
 const AddBook = () => {
@@ -33,14 +34,14 @@ const AddBook = () => {
             });
             
             if (response.ok) {
-                alert('Book added successfully!');
+                toast.success('Book added successfully!');
                 navigate('/allBooks');
             } else {
-                alert('Failed to add book');
+                toast.error('Failed to add book');
             }
         } catch (error) {
             console.error(error);
-            alert('Error adding book');
+            toast.error('Error adding book');
         } finally {
             setLoading(false);
         }
@@ -70,6 +71,7 @@ const AddBook = () => {
                     {loading ? 'Adding Book...' : 'Add Book'}
                 </button>
             </form>
+            <ToastContainer />
         </div>
     );
 };
