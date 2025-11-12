@@ -35,7 +35,7 @@ const Register = () => {
                 }
 
                 //create user in database
-                fetch('http://localhost:3000/users', {
+                fetch('https://book-haven-server-gold.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json"
@@ -74,7 +74,7 @@ const Register = () => {
                 }
 
                 //create user in database
-                fetch('http://localhost:3000/users', {
+                fetch('https://book-haven-server-gold.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json"

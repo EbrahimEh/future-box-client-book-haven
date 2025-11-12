@@ -7,7 +7,7 @@ const AllBooks = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:3000/allBooks')
+        fetch('https://book-haven-server-gold.vercel.app/allBooks')
             .then(res => res.json())
             .then(data => {
                 setBooks(data);

@@ -5,7 +5,7 @@ import TopGenres from '../TopGenres/TopGenres';
 import BookOfTheWeek from '../BookOfTheWeek/BookOfTheWeek';
 import AboutBookHaven from '../AboutBookHaven/AboutBookHaven';
 
-const latestBookPromise = fetch('http://localhost:3000/books').then(res => res.json())
+const latestBookPromise = fetch('https://book-haven-server-gold.vercel.app/books').then(res => res.json())
 
 const Home = () => {
     return (

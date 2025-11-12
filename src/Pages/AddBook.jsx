@@ -27,7 +27,7 @@ const AddBook = () => {
         console.log('Adding book:', bookData); 
 
         try {
-            const response = await fetch('http://localhost:3000/books', {
+            const response = await fetch('https://book-haven-server-gold.vercel.app/books', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(bookData)

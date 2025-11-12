@@ -20,8 +20,8 @@ const BookOfTheWeek = () => {
                 <h2 className="text-3xl font-bold text-center mb-4">Book of the Week</h2>
                 <p className="text-gray-600 text-center mb-12">Featured selection from our collection</p>
                 
-                <div data-aos="zoom-in" className="flex flex-col md:flex-row items-center gap-8 bg-white p-8 rounded-2xl shadow-lg">
-                    <div className="flex-shrink-0">
+                <div data-aos="zoom-in" className="flex flex-col md:flex-row lg:flex-row items-center gap-8 bg-white p-8 rounded-2xl shadow-lg">
+                    <div className="">
                         <img 
                             src={featuredBook.coverImage} 
                             alt={featuredBook.title} 

@@ -10,7 +10,7 @@ const MyBooks = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/mybooks/${user.email}`)
+            fetch(`https://book-haven-server-gold.vercel.app/mybooks/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setBooks(data);
@@ -27,7 +27,7 @@ const MyBooks = () => {
 
     const handleDelete = (id) => {
         if (window.confirm('Are you sure you want to delete this book?')) {
-            fetch(`http://localhost:3000/books/${id}`, {
+            fetch(`https://book-haven-server-gold.vercel.app/books/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

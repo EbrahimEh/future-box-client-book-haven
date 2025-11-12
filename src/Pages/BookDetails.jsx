@@ -8,7 +8,7 @@ const BookDetails = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/allBooks/${id}`)
+        fetch(`https://book-haven-server-gold.vercel.app/allBooks/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data);
