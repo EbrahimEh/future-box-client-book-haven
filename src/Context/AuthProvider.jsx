@@ -48,7 +48,8 @@ const AuthProvider = ({children}) => {
         updateUser,
         logInUser,
         user,
-        signOutUser
+        signOutUser,
+        loading
 
     }
 

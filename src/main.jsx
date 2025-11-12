@@ -15,6 +15,7 @@ import AllBooks from './Pages/AllBooks.jsx';
 import BookDetails from './Pages/BookDetails.jsx';
 import AddBook from './Pages/AddBook.jsx';
 import MyBooks from './Pages/MyBooks.jsx';
+import PrivateRoute from './Route/PrivateRoute.jsx';
 
 
 AOS.init({
@@ -48,15 +49,21 @@ const router = createBrowserRouter ([
       },
       {
         path: '/book-details/:id',
-        Component: BookDetails
+        element: <PrivateRoute>
+          <BookDetails></BookDetails>
+        </PrivateRoute>
       },
       {
         path: '/add-book',
-        Component: AddBook
+        element: <PrivateRoute>
+          <AddBook></AddBook>
+        </PrivateRoute>
       },
       {
         path: '/mybooks',
-        Component: MyBooks
+        element: <PrivateRoute>
+          <MyBooks></MyBooks>
+        </PrivateRoute>
       }
     ]
   }

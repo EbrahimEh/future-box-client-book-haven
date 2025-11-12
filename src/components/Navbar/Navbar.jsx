@@ -10,8 +10,12 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/allBooks'>All Book</NavLink></li>
-        <li><NavLink to='/add-book'>Add Book</NavLink></li>
-        <li><NavLink to='/mybooks'>My Books</NavLink></li>
+        {
+            user && <>
+                <li><NavLink to='/add-book'>Add Book</NavLink></li>
+                <li><NavLink to='/mybooks'>My Books</NavLink></li>
+            </>
+        }
 
     </>
 
@@ -52,7 +56,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div>
                         {
-                            user ? <div  className='flex md:space-x-3 items-center '>
+                            user ? <div className='flex md:space-x-3 items-center '>
                                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName || "User"}>
                                     <img
                                         className='md:w-10 w-8 border rounded-full cursor-pointer'

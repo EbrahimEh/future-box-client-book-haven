@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 const AllBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         fetch('http://localhost:3000/allBooks')
@@ -15,6 +16,7 @@ const AllBooks = () => {
             .catch(error => {
                 console.error('Error fetching books:', error);
                 setLoading(false);
+                
             });
     }, []);
 
