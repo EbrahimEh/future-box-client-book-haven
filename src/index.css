@@ -15,3 +15,8 @@
   --color-primary: #6366f1;    
    --color-secondary: #0ea5e9;  
 }
+
+li .active{
+  text-decoration: underline;
+  color: blue;
+}

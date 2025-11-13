@@ -40,20 +40,20 @@ const Footer = () => {
                 
                 <div className='space-y-3 list-none'>
                     <h6 className="footer-title opacity-100">Quick Links</h6>
-                    <li className="li li-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Home</li>
-                    <li className="li li-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">All Books</li>
-                    <li className="li li-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Add Book</li>
-                    <li className="li li-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">My Books</li>
+                    <li>Home</li>
+                    <li>All Books</li>
+                    <li>Add Book</li>
+                    <li>My Books</li>
                 </div>
 
                 
                 <div className='space-y-3 list-none'>
                     <h6 className="footer-title opacity-100">Categories</h6>
-                    <li className="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Fiction</li>
-                    <li className="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Non-Fiction</li>
-                    <li className="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Science</li>
-                    <li className="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Biography</li>
-                    <li className="link link-hover opacity-70 hover:opacity-100 hover:text-primary transition duration-300">Children</li>
+                    <li>Fiction</li>
+                    <li>Non-Fiction</li>
+                    <li>Science</li>
+                    <li>Biography</li>
+                    <li>Children</li>
                 </div>
 
                 

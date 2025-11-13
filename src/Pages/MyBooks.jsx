@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router';
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 import Swal from 'sweetalert2';
 
@@ -84,7 +84,6 @@ const MyBooks = () => {
         <div className="min-h-screen bg-gray-50 py-8">
             <div className="max-w-7xl mx-auto px-4">
                 <h1 className="text-2xl font-bold text-center md:mt-16 mb-2">My Books</h1>
-                <p className="text-gray-600 text-center mb-8">Books added by: {user.displayName || user.email}</p>
 
                 {books.length === 0 ? (
                     <div className="text-center py-12 bg-white rounded-lg shadow-sm">
@@ -156,7 +155,7 @@ const MyBooks = () => {
                     Showing {books.length} of your books
                 </div>
             </div>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     );
 };
