@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/all-books'>All Books</NavLink></li>
+        <li><NavLink to='/allBooks'>All Books</NavLink></li>
         {
             user && <>
                 <li><NavLink to='/add-book'>Add Book</NavLink></li>

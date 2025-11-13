@@ -8,7 +8,7 @@ const LatestBooks = ({ latestBookPromise }) => {
         <div>
             <h1 className='text-center tracking-widest md:text-4xl text-2xl py-5 font-semibold md:mt-10'>Latest Books</h1>
             
-            <div className='max-w-7xl mx-auto grid md:grid-cols-3 xl:grid-cols-2 md:gap-10 gap-5 px-8 md:py-10 grid-cols-1'>
+            <div className='max-w-7xl mx-auto grid md:grid-cols-3 xl:grid-cols-3 md:gap-10 gap-5 px-8 md:py-10 grid-cols-1'>
                 {
                     books.map(book => <div key={book._id}>
                         <div data-aos="zoom-in" className="card bg-base-200 shadow-sm">
