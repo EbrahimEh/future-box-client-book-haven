@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Banner from '../Banner/Banner';
 import LatestBooks from '../../Pages/LatestBooks';
 import TopGenres from '../TopGenres/TopGenres';
@@ -9,7 +9,8 @@ const latestBookPromise = fetch('https://book-haven-server-gold.vercel.app/books
 
 const Home = () => {
     return (
-        <div>
+         <div>
+           
             <Banner></Banner>
             <LatestBooks latestBookPromise={latestBookPromise}></LatestBooks>
             <TopGenres></TopGenres>

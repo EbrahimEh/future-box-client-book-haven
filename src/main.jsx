@@ -17,6 +17,7 @@ import AddBook from './Pages/AddBook.jsx';
 import MyBooks from './Pages/MyBooks.jsx';
 import PrivateRoute from './Route/PrivateRoute.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
+import UpdateBook from './Pages/UpdateBook.jsx';
 
 
 AOS.init({
@@ -65,6 +66,10 @@ const router = createBrowserRouter ([
         element: <PrivateRoute>
           <MyBooks></MyBooks>
         </PrivateRoute>
+      },
+      {
+        path: '/update-book/:id',
+        Component: UpdateBook
       },
       {
         path: '*',

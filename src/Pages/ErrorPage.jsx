@@ -3,7 +3,7 @@ import error from '../assets/error page.jpg'
 
 const ErrorPage = () => {
     return (
-        <div className='md:mt-10 bg-gray-200'>
+        <div className='mt-16 bg-gray-200'>
             <img className='max-h-[600px] mx-auto' src={error} alt="" />
         </div>
     );

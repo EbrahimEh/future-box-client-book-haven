@@ -133,7 +133,7 @@ const MyBooks = () => {
                                                         to={`/update-book/${book._id}`}
                                                         className="btn btn-primary btn-sm"
                                                     >
-                                                        Edit
+                                                        Update
                                                     </Link>
                                                     <button
                                                         onClick={() => handleDelete(book._id)}
