@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const MyBooks = () => {
     const [books, setBooks] = useState([]);
@@ -26,22 +27,49 @@ const MyBooks = () => {
     }, [user]);
 
     const handleDelete = (id) => {
-        if (window.confirm('Are you sure you want to delete this book?')) {
-            fetch(`https://book-haven-server-gold.vercel.app/books/${id}`, {
-                method: 'DELETE'
-            })
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "Cancel",
+            background: '#fff',
+            color: '#333'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://book-haven-server-gold.vercel.app/books/${id}`, {
+                    method: 'DELETE'
+                })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
                         setBooks(books.filter(book => book._id !== id));
-                        toast.success('Book deleted successfully!');
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your book has been deleted successfully.",
+                            icon: "success",
+                            confirmButtonColor: "#3085d6",
+                            background: '#fff',
+                            color: '#333'
+                        });
                     }
                 })
                 .catch(error => {
                     console.error('Delete error:', error);
-                    toast.error('Failed to delete book');
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Failed to delete book. Please try again.",
+                        icon: "error",
+                        confirmButtonColor: "#d33",
+                        background: '#fff',
+                        color: '#333'
+                    });
                 });
-        }
+            }
+        });
     };
 
     if (loading) {
@@ -52,22 +80,10 @@ const MyBooks = () => {
         );
     }
 
-    if (!user) {
-        return (
-            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-                <div className="text-center">
-                    <h2 className="text-2xl font-bold mb-4">Please Login First</h2>
-                    <p className="text-gray-600 mb-6">You need to be logged in to view your books.</p>
-                    <Link to="/login" className="btn btn-primary">Login Now</Link>
-                </div>
-            </div>
-        );
-    }
-
     return (
         <div className="min-h-screen bg-gray-50 py-8">
             <div className="max-w-7xl mx-auto px-4">
-                <h1 className="text-3xl font-bold text-center mb-2">My Books</h1>
+                <h1 className="text-2xl font-bold text-center md:mt-16 mb-2">My Books</h1>
                 <p className="text-gray-600 text-center mb-8">Books added by: {user.displayName || user.email}</p>
 
                 {books.length === 0 ? (

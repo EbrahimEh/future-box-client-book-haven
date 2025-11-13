@@ -5,8 +5,8 @@ import bookBanner from '../../assets/bookBanner.jpg'
 const Banner = () => {
     
     return (
-        <div className='md:max-w-[1600px] relative'>
-            <div>
+        <div className='w-full relative'>
+            <div className='w-full h-screen max-h-[100vh] overflow-hidden'>
                 <img className='md:max-h-screen mx-auto w-full object-cover' src={bookBanner} alt="Books Haven Banner" />
             </div>
             <div  className='absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center px-4'>
